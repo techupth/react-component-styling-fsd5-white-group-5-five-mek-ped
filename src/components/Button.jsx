@@ -1,40 +1,40 @@
+// Start coding here
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-const buttonStyle = css`
-  wideth: 171.19;
-  height: 50px;
-  padding: 0px 16px;
-  border-radius: 4px;
-  color: white;
-  gap: 8px;
-  margin: 10px;
-`;
-
 function Button(props) {
-  if (props.type === "primary") {
-    return (
-      <button
-        css={css`
-          ${buttonStyle}
-          background-color: #074ee8;
-        `}
-      >
-        Button
-      </button>
-    );
-  } else if (props.type === "secondary") {
-    return (
-      <button
-        css={css`
-          ${buttonStyle}
-          background-color: #07a4e8;
-        `}
-      >
-        Button
-      </button>
-    );
+  let color;
+
+  if (props.style === "primary") {
+    color = "#074EE8";
+  } else if (props.style === "secondary") {
+    color = "#07a4e8";
   }
+
+  return (
+    <button
+      css={css`
+        color: var(--Surface, #fff);
+        font-family: Sarabun;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px; /* 112.5% */
+        display: flex;
+        width: 171.19px;
+        height: 50px;
+        padding: 0px 16px;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        flex-shrink: 0;
+        border-radius: 4px;
+        background-color: ${color};
+      `}
+    >
+      Large
+    </button>
+  );
 }
 
 export default Button;
